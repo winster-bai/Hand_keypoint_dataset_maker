@@ -81,7 +81,7 @@ def h_gesture(angle_list):
     return gesture_str
 
 def detect():
-    model = YOLO("epoch100.pt")  # load a custom model
+    model = YOLO("path_to_your_model.pt")  # load a custom model
     cap = cv2.VideoCapture(0)  # 参数0表示调用默认摄像头
 
     while True:

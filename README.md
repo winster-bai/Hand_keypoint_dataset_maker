@@ -13,4 +13,16 @@ pip install mediapipe
 运行后弹出摄像头画面，将需要采集的手势放入画面后，按下键盘“s”开始连续采集手势
 
 ## 2.yolo模型训练
+1.修改config.yaml中的路径，使其与采集的图像标签路径一致
+2.运行train_yolov8.py （根据需要修改训练参数）
 
+## 3.实时检测
+修改real_time_guest.py中的path_to_your_model.pt为你的模型路径（通常保存在runs/train/weights文件夹下），可按照个人需求修改h_gesture()函数中的类别来检测更多手势
+
+
+## 4.其他
+如果识别结果差,检查实时识别的手势标签是否符合mediapipe标准标注说明（见下图）
+![图片](image/hand_landmarks.png)
+
+
+如果关键点绑定效果好但是序号错乱，可以直接修改real_time_guest.py中hand_angle()函数的序号定义来实现手势区分
